@@ -1,52 +1,49 @@
-# Prerequisites
-*.d
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# .NET Core Project
+bin
+obj
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
-# Precompiled Headers
-*.gch
-*.pch
+# dependencies
+/node_modules
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# profiling files
+chrome-profiler-events*.json
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# System Files
+.DS_Store
+Thumbs.db
