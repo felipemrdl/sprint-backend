@@ -13,9 +13,9 @@ namespace sprint_backend.Business.Service
     {
         private readonly JwtSettings _jwtSettings;
 
-        public JWTService(JwtSettings _jwtSettings)
+        public JWTService(JwtSettings settings)
         {
-            this._jwtSettings = _jwtSettings ?? throw new ArgumentNullException(nameof(_jwtSettings));
+            this._jwtSettings = settings ?? throw new ArgumentNullException(nameof(settings));
         }
 
         public JsonWebToken CreateJsonWebToken(List<Claim> claims) {

@@ -10,7 +10,7 @@ using sprint_backend.EF;
 
 namespace sprint_backend.Business.Service
 {
-    public class TarefaService
+    public class TarefaService : ITarefaService
     {
         private readonly Context _context;
         private readonly ISprintService _sprintService;

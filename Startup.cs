@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -45,11 +46,16 @@ namespace sprint_backend
             services.AddCors();
 
             services.AddDbContext<Context>(c => {
-                c.UseSqlServer("Server=localhost\\MSSQLSERVER02;Database=DB_SPRINT;Trusted_Connection=True;User=dev;Password=dev@123");
+                c.UseSqlServer("Server=localhost\\MSSQLSERVER02;Database=DB_SPRINT;Trusted_Connection=True;User=dev;Password=dev@12345");
             });
 
-            services.AddSingleton<IAutenticacaoService, AutenticacaoService>();
-            services.AddSingleton<IJWTService, JWTService>();
+            jwtSettings = new JwtSettings(Configuration);
+            services.TryAddSingleton(jwtSettings);
+
+            services.AddScoped<IAutenticacaoService, AutenticacaoService>();
+            services.AddScoped<IJWTService, JWTService>();
+            services.AddScoped<ISprintService, SprintService>();
+            services.AddScoped<ITarefaService, TarefaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
