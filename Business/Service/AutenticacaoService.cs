@@ -25,8 +25,6 @@ namespace sprint_backend.Business.Service
                 .Where(w => w.Login == login)
                 .FirstOrDefaultAsync();
 
-                
-
                 if(usuario is null)
                 { throw new Exception($"Usuário {login} não encontrado."); }
                 else

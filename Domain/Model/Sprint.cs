@@ -22,9 +22,9 @@ namespace sprint_backend.Domain.Model
         [Column("PorcentagemConclusao")]
         public decimal PorcentagemConclusao { get; set; }
         [Column("DataInicio")]
-        public DateTime DataInicio { get; set; }
+        public DateTime? DataInicio { get; set; }
         [Column("DataFim")]
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
 
         public virtual ICollection<UsuarioSprint> UsuarioSprint { get; set; }
         public virtual ICollection<Tarefa> Tarefas { get; set; }

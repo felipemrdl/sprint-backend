@@ -10,5 +10,6 @@ namespace sprint_backend.Business.Interface
     {
         Task NovaSprint(int usuarioId, SprintDto dto);
         Task<bool> ExisteSprint(int sprintId);
+        Task<List<SprintDto>> RecuperarTodos();
     }
 }
